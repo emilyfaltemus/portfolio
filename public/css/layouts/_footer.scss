@@ -1,0 +1,17 @@
+$select: ".footer" !default;
+
+// config
+@use "../config/colors";
+
+@mixin base {
+    #{$select} {
+        text-align: center;
+
+        @include colors.color-map(
+            var(--color-dark-primary),
+            var(--color-light-primary)
+        );
+
+        @content;
+    }
+}

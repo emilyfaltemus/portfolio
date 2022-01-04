@@ -1,0 +1,5 @@
+@mixin copy($gap: 1em) {
+    > * + * {
+        margin-top: #{$gap};
+    }
+}

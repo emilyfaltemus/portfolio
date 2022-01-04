@@ -1,0 +1,14 @@
+$select: ".content" !default;
+
+// abstracts
+@use "../abstracts/separate";
+
+@mixin base {
+    #{$select} {
+        &__text {
+            @include separate.copy;
+        }
+
+        @content;
+    }
+}

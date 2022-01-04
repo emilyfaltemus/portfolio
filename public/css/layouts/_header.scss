@@ -1,0 +1,11 @@
+$select: ".header" !default;
+
+@mixin base {
+    #{$select} {
+        font-family: "Calistoga", cursive;
+        line-height: 1.25;
+        text-align: center;
+
+        @content;
+    }
+}

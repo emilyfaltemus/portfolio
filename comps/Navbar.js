@@ -1,21 +1,19 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
     return (
-        <nav>
-            <div className="logo">
-                <img src="/vercel.svg" width="100" height="100" />
+        <nav aria-label="Main sections" className="view nav section">
+            <div className="nav__group">
+                <Link href="/">
+                    <a>Home</a>
+                </Link>
+                <Link href="/about">
+                    <a>About</a>
+                </Link>
+                <Link href="/work">
+                    <a>Work</a>
+                </Link>
             </div>
-            <Link href="/">
-                <a>Home</a>
-            </Link>
-            <Link href="/about">
-                <a>About</a>
-            </Link>
-            <Link href="/work">
-                <a>Work</a>
-            </Link>
         </nav>
     );
 };

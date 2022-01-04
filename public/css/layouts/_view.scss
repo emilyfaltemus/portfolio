@@ -1,0 +1,21 @@
+$select: ".view" !default;
+
+@mixin base {
+    #{$select} {
+        position: relative;
+
+        &__anchor {
+            position: absolute;
+        }
+
+        @content;
+    }
+}
+
+@mixin set-anchor-offset($offset: 0) {
+    #{$select} {
+        &__anchor {
+            top: -#{$offset};
+        }
+    }
+}

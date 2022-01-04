@@ -1,0 +1,15 @@
+$select: ".page" !default;
+
+@mixin base {
+    #{$select} {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+
+        &__footer {
+            flex-grow: 1;
+        }
+
+        @content;
+    }
+}

@@ -1,7 +1,9 @@
 const Footer = () => {
     return (
-        <footer>
-            <address>Copyright 2022</address>
+        <footer className="view page__footer footer section">
+            <div className="section__in">
+                <address>Thanks for visiting!</address>
+            </div>
         </footer>
     );
 };

@@ -1,0 +1,23 @@
+@use "layouts/document";
+@use "layouts/page";
+@use "layouts/section";
+@use "layouts/view";
+@use "layouts/header";
+@use "layouts/content";
+@use "layouts/footer";
+@use "layouts/main";
+@use "layouts/nav";
+
+@include document.base;
+@include page.base;
+
+@include section.base;
+@include view.base;
+@include view.set-anchor-offset(3.6em);
+
+@include header.base;
+@include footer.base;
+@include main.base;
+@include nav.base;
+
+@include content.base;

@@ -1,0 +1,10 @@
+@mixin contain($gap: 1em) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: #{$gap};
+
+    > * {
+        flex: 0 1 auto;
+    }
+}

@@ -1,0 +1,17 @@
+$select: ".main" !default;
+
+// abstracts
+@use "../abstracts/divider-line";
+
+@mixin base {
+    @include divider-line.base {
+        @include divider-line.row;
+    }
+
+    #{$select} {
+        h1 {
+        }
+
+        @content;
+    }
+}
