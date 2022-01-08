@@ -8,6 +8,13 @@
 @use "layouts/main";
 @use "layouts/nav";
 
+// abstracts
+@use "abstracts/symbols";
+@use "abstracts/sigil";
+
+@include symbols.base;
+@include sigil.base;
+
 @include document.base;
 @include page.base;
 

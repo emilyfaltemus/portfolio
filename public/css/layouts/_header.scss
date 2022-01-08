@@ -6,6 +6,10 @@ $select: ".header" !default;
         line-height: 1.25;
         text-align: center;
 
+        &__sigil {
+            color: var(--color-midtone-secondary);
+        }
+
         @content;
     }
 }

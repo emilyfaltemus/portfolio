@@ -1,0 +1,17 @@
+$select: ".sigil" !default;
+
+// config
+@use "../config/colors";
+
+@mixin base {
+    #{$select} {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+
+        @content;
+    }
+}

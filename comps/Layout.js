@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Sigil from "./Sigil";
 
 const Layout = ({ children }) => {
     return (
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
                 <Navbar />
                 {children}
                 <Footer />
+                <Sigil />
             </div>
         </>
     );

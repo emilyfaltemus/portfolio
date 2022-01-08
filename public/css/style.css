@@ -1,3 +1,16 @@
+.symbols {
+  display: none;
+}
+
+.sigil {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
 :root {
   --color-dark-primary: #8f6b5d;
   --color-midtone-primary: #c2bbab;
@@ -66,6 +79,9 @@ a {
   font-family: "Calistoga", cursive;
   line-height: 1.25;
   text-align: center;
+}
+.header__sigil {
+  color: var(--color-midtone-secondary);
 }
 
 .footer {

@@ -1,0 +1,9 @@
+$select: ".symbols" !default;
+
+@mixin base {
+    #{$select} {
+        display: none;
+
+        @content;
+    }
+}
