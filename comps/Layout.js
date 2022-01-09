@@ -3,6 +3,8 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Sigil from "./Sigil";
+import Clouds from "./Clouds";
+import Stars from "./Stars";
 
 const Layout = ({ children }) => {
     return (
@@ -21,11 +23,19 @@ const Layout = ({ children }) => {
                 <link href="/css/style.css" rel="stylesheet" />
             </Head>
             <div className="page">
-                <Header />
                 <Navbar />
+                <Header />
                 {children}
                 <Footer />
                 <Sigil />
+                <div className="background-scene">
+                    <div className="background-scene background-scene__front">
+                        <Clouds />
+                    </div>
+                    <div className="background-scene background-scene__back">
+                        <Stars />
+                    </div>
+                </div>
             </div>
         </>
     );

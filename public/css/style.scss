@@ -8,10 +8,17 @@
 @use "layouts/main";
 @use "layouts/nav";
 
+// components
+@use "components/clouds";
+@use "components/stars";
+
 // abstracts
 @use "abstracts/symbols";
 @use "abstracts/sigil";
+@use "abstracts/background-scene";
+@use "abstracts/pin-note";
 
+@include pin-note.base;
 @include symbols.base;
 @include sigil.base;
 
@@ -28,3 +35,7 @@
 @include nav.base;
 
 @include content.base;
+
+@include background-scene.base;
+@include clouds.base;
+@include stars.base;

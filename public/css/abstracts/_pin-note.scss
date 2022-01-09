@@ -1,0 +1,11 @@
+$select: ".pin-note" !default;
+
+@mixin base {
+    #{$select} {
+        background: var(--color-base-background);
+        filter: drop-shadow(0.1em 0.1em 0.3em var(--color-midtone-tertiary));
+        padding: 1em;
+
+        @content;
+    }
+}

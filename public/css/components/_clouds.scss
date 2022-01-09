@@ -1,0 +1,111 @@
+$select: ".clouds" !default;
+
+@mixin base {
+    @keyframes moveclouds {
+        0% {
+            margin-left: 1000px;
+        }
+        100% {
+            margin-left: -1000px;
+        }
+    }
+
+    #{$select} {
+        padding-top: 100px;
+        background: #c9dbe9;
+        background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+        background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+        background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+
+        &__item {
+            width: 200px;
+            height: 60px;
+            background: #fff;
+
+            border-radius: 200px;
+            position: relative;
+
+            animation: moveclouds 15s linear infinite;
+
+            &::before,
+            &::after {
+                content: "";
+                background: #fff;
+                width: 100px;
+                height: 80px;
+                position: absolute;
+                top: -15px;
+                left: 10px;
+
+                border-radius: 100px;
+                transform: rotate(30deg);
+            }
+
+            &::after {
+                width: 120px;
+                height: 120px;
+                top: -55px;
+                left: auto;
+                right: 15px;
+            }
+
+            @include get-cloud-item(1) {
+            }
+
+            @include get-cloud-item(2) {
+                left: 200px;
+
+                transform: scale(0.6);
+                opacity: 0.6;
+                animation-duration: 25s;
+            }
+
+            @include get-cloud-item(3) {
+                left: -250px;
+                top: -200px;
+
+                transform: scale(0.8);
+                opacity: 0.8;
+                animation-duration: 20s;
+            }
+
+            @include get-cloud-item(4) {
+                left: 470px;
+                top: -250px;
+
+                transform: scale(0.75);
+                opacity: 0.75;
+                animation-duration: 18s;
+            }
+
+            @include get-cloud-item(5) {
+                left: -150px;
+                top: -150px;
+
+                transform: scale(0.8);
+                opacity: 0.8;
+                animation-duration: 20s;
+            }
+        }
+
+        &__item {
+            animation-play-state: running;
+
+            @media (prefers-color-scheme: dark) {
+                animation-play-state: paused;
+            }
+
+            @media (prefers-color-scheme: light) {
+                animation-play-state: running;
+            }
+        }
+
+        @content;
+    }
+}
+
+@mixin get-cloud-item($n) {
+    &[data-cloud-item="#{$n}"] {
+        @content;
+    }
+}

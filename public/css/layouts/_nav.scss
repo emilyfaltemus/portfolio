@@ -9,7 +9,7 @@ $select: ".nav" !default;
         position: sticky;
         top: 0;
 
-        background: white;
+        background: var(--color-base-background);
         box-shadow: 0 1px 0.1em rgba(0, 0, 0, 0.25);
 
         &__group {

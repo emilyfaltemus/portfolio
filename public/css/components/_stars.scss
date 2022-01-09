@@ -1,0 +1,92 @@
+$select: ".stars" !default;
+
+// n is number of stars required
+@function multiple-box-shadow($n) {
+    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+
+    @for $i from 2 through $n {
+        $value: "#{$value}, #{random(2000)}px #{random(2000)}px #FFF";
+    }
+
+    @debug $value;
+
+    @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+@mixin base {
+    @keyframes animStar {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-2000px);
+        }
+    }
+
+    #{$select} {
+        background: radial-gradient(
+            ellipse at bottom,
+            #1b2735 0%,
+            #090a0f 100%
+        );
+
+        &__item {
+            --star-size: 1px;
+
+            animation: animStar 50s linear infinite;
+
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+            }
+
+            &,
+            &::after {
+                width: var(--star-size);
+                height: var(--star-size);
+                background: transparent;
+                box-shadow: var(--star-shadow);
+            }
+
+            @include get-star-item(1) {
+                --star-size: 1px;
+                --star-shadow: #{$shadows-small};
+            }
+
+            @include get-star-item(2) {
+                --star-size: 2px;
+                --star-shadow: #{$shadows-medium};
+            }
+
+            @include get-star-item(3) {
+                --star-size: 3px;
+                --star-shadow: #{$shadows-big};
+            }
+        }
+
+        &__item {
+            animation-play-state: paused;
+
+            @media (prefers-color-scheme: light) {
+                animation-play-state: paused;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                animation-play-state: running;
+            }
+        }
+
+        @content;
+    }
+}
+
+@mixin get-star-item($n) {
+    &[data-star-item="#{$n}"] {
+        @content;
+    }
+}

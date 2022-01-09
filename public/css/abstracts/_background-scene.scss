@@ -1,0 +1,82 @@
+$select: ".background-scene" !default;
+
+@mixin base {
+    #{$select} {
+        display: flex;
+        flex-direction: column;
+
+        z-index: -1;
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+
+        > * {
+            flex: 1;
+        }
+
+        &__back {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        &--set-to-front &__back {
+        }
+
+        &--set-to-back &__back {
+        }
+
+        &--set-to-front {
+            @include pause-back-scene();
+            @include play-front-scene();
+
+            #{$select} {
+                &__back {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &--set-to-back {
+            @include pause-front-scene();
+            @include play-back-scene();
+
+            #{$select} {
+                &__back {
+                    opacity: 1;
+                }
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            &__back {
+                opacity: 1;
+            }
+        }
+
+        @content;
+    }
+}
+
+@mixin pause-front-scene {
+    [data-background-scene="back"] {
+        animation-play-state: paused;
+    }
+}
+
+@mixin pause-back-scene {
+    [data-background-scene="back"] {
+        animation-play-state: paused;
+    }
+}
+
+@mixin play-back-scene {
+    [data-background-scene="back"] {
+        animation-play-state: running;
+    }
+}
+
+@mixin play-front-scene {
+    [data-background-scene="front"] {
+        animation-play-state: running;
+    }
+}

@@ -20,30 +20,33 @@ const Work = ({ people }) => {
             </Head>
             <main aria-labelledby="main-title" className="view content section">
                 <div id="main" className="view__anchor"></div>
-                <div className="section__in content__text">
-                    <h1 id="main-title">Work</h1>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Aperiam ratione officia dignissimos at sit vero
-                        saepe incidunt deserunt tenetur mollitia rem illum
-                        pariatur reprehenderit veritatis, voluptas voluptatum
-                        dolor nihil eligendi.
-                    </p>
+                <div className="section__in">
+                    <div className="pin-note content__text">
+                        <h1 id="main-title">Work</h1>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Aperiam ratione officia dignissimos at sit
+                            vero saepe incidunt deserunt tenetur mollitia rem
+                            illum pariatur reprehenderit veritatis, voluptas
+                            voluptatum dolor nihil eligendi.
+                        </p>
 
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Perspiciatis, sunt ut quis neque deleniti dicta
-                        sed. Nulla quos sit asperiores, officia quas corporis in
-                        molestias natus, veritatis sequi laboriosam ipsum?
-                    </p>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Perspiciatis, sunt ut quis neque deleniti
+                            dicta sed. Nulla quos sit asperiores, officia quas
+                            corporis in molestias natus, veritatis sequi
+                            laboriosam ipsum?
+                        </p>
 
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Aperiam ratione officia dignissimos at sit vero
-                        saepe incidunt deserunt tenetur mollitia rem illum
-                        pariatur reprehenderit veritatis, voluptas voluptatum
-                        dolor nihil eligendi.
-                    </p>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Aperiam ratione officia dignissimos at sit
+                            vero saepe incidunt deserunt tenetur mollitia rem
+                            illum pariatur reprehenderit veritatis, voluptas
+                            voluptatum dolor nihil eligendi.
+                        </p>
+                    </div>
                 </div>
             </main>
         </>

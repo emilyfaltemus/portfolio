@@ -1,11 +1,26 @@
 @mixin base {
     :root {
+        --color-base: #252525;
+        --color-base-background: white;
+
         --color-dark-primary: #8f6b5d;
         --color-midtone-primary: #c2bbab;
         --color-light-primary: #f1e7cc;
 
         --color-midtone-secondary: #899281;
         --color-midtone-tertiary: #c88769;
+
+        @media (prefers-color-scheme: dark) {
+            --color-base: white;
+            --color-base-background: #252525;
+
+            --color-dark-primary: #131862;
+            --color-midtone-primary: #c2bbab;
+            --color-light-primary: #f1e7cc;
+
+            --color-midtone-secondary: #899281;
+            --color-midtone-tertiary: #546bab;
+        }
     }
 }
 
